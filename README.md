@@ -38,7 +38,8 @@ sudo systemctl enable docker.service
 目录结构 
 
 ```
-docker_lnmpr
+TreesDocker
+
 ├── mysql
 │   └── Dockerfile
 	└── mysqld.cnf
@@ -88,7 +89,9 @@ docker run --name redis326 --net docker-at --ip 162.161.0.10 -d -p 6379:6379  -v
 以上整合到 docker-compose.yml，如下：
 
 ```
-
+#lnmp_rrms 配置
+#From：Trees.org.cn
+#Author: Luisxue
 mysql:
     build: ./mysql
     ports:
@@ -107,6 +110,27 @@ redis:
       - /data/redis:/data
     ports:
       - "6379:6379"
+      
+rabbitmq:
+    build: ./rabbitmq
+    volumes:
+      - /data/rabbitmq:/data
+    ports:
+      - "15672:15672"
+
+mongodb:
+    build: ./mongodb
+    volumes:
+      - /data/mongodb:/data
+    ports:
+      - "27017:28017"
+
+sphinx:
+    build: ./sphinx
+    volumes:
+      - /data/sphinx:/data
+    ports:
+      - "9306:9306"
 
 php:
     build: ./php

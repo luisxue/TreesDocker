@@ -21,6 +21,27 @@ redis:
     ports:
       - "6379:6379"
 
+rabbitmq:
+    build: ./rabbitmq
+    volumes:
+      - /data/rabbitmq:/data
+    ports:
+      - "15672:15672"
+
+mongodb:
+    build: ./mongodb
+    volumes:
+      - /data/mongodb:/data
+    ports:
+      - "27017:28017"
+      
+sphinx:
+    build: ./sphinx
+    volumes:
+      - /data/sphinx:/data
+    ports:
+      - "9306:9306"
+
 php:
     build: ./php
     ports:
