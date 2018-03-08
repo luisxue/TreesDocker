@@ -278,7 +278,7 @@ docker exec -it 54a454b827e5 /bin/bash
 	2bf7ad9f44f9        centos/php:v7.0.12     "/usr/local/php/sbin/"    About an hour ago   Up About an hour    0.0.0.0:9000->9000/tcp        php7
 	4b84858ea4e4        centos/redis:v3.2.6    "/bin/sh -c '\"/usr/lo"   18 hours ago        Up About an hour    0.0.0.0:6379->6379/tcp        redis326
 	158c67aa178c        centos/mysql:v5.7      "docker-entrypoint.sh"    6 days ago          Up About an hour    0.0.0.0:3306->3306/tcp        mysql57
-	[root@iZ287mq5dooZ php]# docker inspect 4b84858ea4e4
+	[root@Luisxue_one php]# docker inspect 4b84858ea4e4
 	
 	```
 	结果是为 192.168.0.4，测试连接，成功
