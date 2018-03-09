@@ -18,10 +18,12 @@ Docker 是一种容器技术，它可以将应用和环境等进行打包，形�
 
 ### 各环境安装Docker
 daocloud 国内镜像最好用，借鉴官方文档：http://get.daocloud.io/
+
 (Docker使用项目开发经验：建议使用daocloud的Docker Toolbox资源安装window和Mac环境，对老版本的Windows和mac支持相对友好)
 
 **mac 下安装**
 daocloud 的国内镜像最快：http://get.daocloud.io/#install-docker-for-mac-windows
+
 [Docker for Mac 下载](https://dn-dao-github-mirror.qbox.me/docker/install/mac/Docker.dmg)
 在Mac上运行Docker。系统要求，OS X 10.10.3 或者更高版本，至少4G内存，4.3.30版本以前的VirtualBox会与Docker for Mac产生冲突，所以请卸载旧版本的VitrualBox。
 
@@ -33,7 +35,7 @@ daocloud 的国内镜像最快：http://get.daocloud.io/#install-docker-for-mac-
 [Docker Toolbox 下载](https://get.daocloud.io/toolbox/)
 如果您的电脑版本过旧，可以使用 Docker Toolbox 在Windows或者Mac上运行Docker。适用于Mac OS X 10.8+ 或者 Windows 7/8.1。
 
-window安装会出现的问题：
+**window安装会出现的问题**
 
 目前很多开发人员仍是在Mac和Windows系统进行开发，为了方便环境的部署和管理，Docker公司近期推出了DockerToolbox工具包，可以跨平台（Mac、Windows）使用，对于想在Windows环境下体验容器技术并开发产品的程序员来说真是福音。
 安装过程很简单，直接去官网下载对应的安装包到本地执行安装程序即可，安装后会自动在系统中打包安装VirtualBox虚拟机（因为Docker依赖Linux系统，必须模拟Linux环境）、Docker-engine、Docker-machine、Docker-compose等组件，基本做到了即开即用。
@@ -78,7 +80,7 @@ sudo systemctl enable docker.service
 ```
 
 
-目录结构 
+### 目录结构 
 
 ```
 TreesDocker
