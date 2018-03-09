@@ -1,4 +1,5 @@
-### 使用TreesDockerfile 部署 lnmp+redis+rabtitmq+mongodb+sphinx 等等，测试和生产环境。会极大项目的开发和Git代码交付工作 
+### 使用TreesDockerfile 部署 lnmp+redis+rabtitmq+mongodb+sphinx 等等测试和生产环境。
+### TreesDockerfile 会极大方便项目的快速迭代开发和Git代码交付工作。
 
 
 ### 什么是 Docker？
