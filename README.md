@@ -17,14 +17,57 @@ Docker 是一种容器技术，它可以将应用和环境等进行打包，形�
 
 
 ### 各环境安装Docker
-**mac**
+daocloud 国内镜像最好用，借鉴官方文档：http://get.daocloud.io/
+(Docker使用项目开发经验：建议使用daocloud的Docker Toolbox资源安装window和Mac环境，对老版本的Windows和mac支持相对友好)
+
+**mac 下安装**
+daocloud 的国内镜像最快：http://get.daocloud.io/#install-docker-for-mac-windows
+[Docker for Mac 下载](https://dn-dao-github-mirror.qbox.me/docker/install/mac/Docker.dmg)
+在Mac上运行Docker。系统要求，OS X 10.10.3 或者更高版本，至少4G内存，4.3.30版本以前的VirtualBox会与Docker for Mac产生冲突，所以请卸载旧版本的VitrualBox。
+
+**windows 7 下安装**
+
+[Docker for Windows 下载](https://dn-dao-github-mirror.qbox.me/docker/install/windows/InstallDocker.msi)
+在Windows上运行Docker。系统要求，Windows10x64位，支持Hyper-V。
+
+[Docker Toolbox 下载](https://get.daocloud.io/toolbox/)
+如果您的电脑版本过旧，可以使用 Docker Toolbox 在Windows或者Mac上运行Docker。适用于Mac OS X 10.8+ 或者 Windows 7/8.1。
+
+window安装会出现的问题：
+
+目前很多开发人员仍是在Mac和Windows系统进行开发，为了方便环境的部署和管理，Docker公司近期推出了DockerToolbox工具包，可以跨平台（Mac、Windows）使用，对于想在Windows环境下体验容器技术并开发产品的程序员来说真是福音。
+安装过程很简单，直接去官网下载对应的安装包到本地执行安装程序即可，安装后会自动在系统中打包安装VirtualBox虚拟机（因为Docker依赖Linux系统，必须模拟Linux环境）、Docker-engine、Docker-machine、Docker-compose等组件，基本做到了即开即用。
+
+然后主要就是进入命令行管理界面（安装包会创建快捷方式），执行各种docker命令进行工作了，我在使用过程中主要遇到了如下问题：
+
+1、CPU虚拟化的开启，现在的CPU一般都在硬件级别支持虚拟化技术，但是有的可能默认没有打开，需要到BIOS中手动开启，查看是否开启的方法是，在windows系统任务管理器的“性能”页，是否有虚拟化已开启的字样，当然目前也有一些比较老的低端CPU不支持，这个就建议更换设备吧。
+
+2、与Windows系统自带的虚拟化技术Hyper-V冲突，专业版的Windows系统一般带有虚拟化技术组件，是微软自有的，名叫Hyper-V（与virtual box等类似），但是与我们要安装的工具有冲突，需要关闭Hyper-V后才能正常使用，具体操作方法为到控制面板的“程序和功能”里面的“启用或关闭windows功能”将Hyper-V关掉。
+
+3、VirtualBox虚拟机网段IP分配冲突，这个是我遇到的特例，VirtualBox会自动给用于模拟Docker环境的虚拟机分配内网IP地址，且默认为10.0.2网段，这个恰恰与我的工作环境存在冲突，而且界面中和配置文件里都没有可配置的地方，经过多天研究，终于找到通过命令行的方式将这个默认配置可以改掉 ，命令如下VBoxManage.exe modifyvm "default" --natnet1 "10.0.20.0/24"（需要在virtualbox安装目录下执行，default是虚拟机的名字。）
+
+4、系统重启后环境丢失（偶然发生），这个可能是工具存在bug，我在下载各种镜像进行测试后，将我的Windows重启后发现default虚拟机里的东西都丢了，这个可能是由于环境在运行的状态下我重启了系统导致。目前我的解决办法是在每次关机或重启的时候，先将default虚拟机停掉，方法是在命令行下执行如下指令docker-machine stop default 。
 
 
-**windows 7 安装**
 
+**linux 下安装** 
 
+Docker 的 安装资源文件:http://get.daocloud.io/#install-docker
+存放在Amazon S3，会间歇性连接失败。所以安装Docker的时候，会比较慢。 
+你可以通过执行下面的命令，高速安装Docker。
 
-**linux**
+```
+curl -sSL https://get.daocloud.io/docker | sh
+```
+适用于Ubuntu，Debian,Centos等大部分Linux，会3小时同步一次Docker官方资源
+
+安装体验版或测试版，体验最新Docker。
+
+```
+curl -sSL https://get.daocloud.io/docker-experimental | sh
+curl -sSL https://get.daocloud.io/docker-test | sh
+```
+yum 安装
 
 ```
 sudo yum update
@@ -47,7 +90,7 @@ TreesDocker
 │   ├── Dockerfile
 │   ├── nginx.conf
 │   └── vhost
-│       └── www.texixi.com.conf
+│       └── luisxue.xcodn.com.conf
 ├── php
 │   ├── Dockerfile
 │   ├── composer.phar

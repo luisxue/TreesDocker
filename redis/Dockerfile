@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER AT <terry.dawu@gmail.com>
+MAINTAINER AT <luisxuee@gmail.com>
 
 
 RUN yum -y install epel-release && \
