@@ -1,4 +1,4 @@
-### 使用TreesDockerfile 部署 lnmp+redis+rabtitmq+mongodb+sphinx 开发环境 
+### 使用TreesDockerfile 部署 lnmp+redis+rabtitmq+mongodb+sphinx 等等，测试和生产环境。会极大项目的开发和Git代码交付工作 
 
 
 ### 什么是 Docker？
@@ -6,7 +6,8 @@
 
 ### Docker 简介
 
-Docker 是一种容器技术，它可以将应用和环境等进行打包，形成一个独立的，类似于 iOS 的 APP 形式的「应用」，这个应用可以直接被分发到任意一个支持 Docker 的环境中，通过简单的命令即可启动运行。Docker 是一种最流行的容器化实现方案。和虚拟化技术类似，它极大的方便了应用服务的部署；又与虚拟化技术不同，它以一种更轻量的方式实现了应用服务的打包。使用 Docker 可以让每个应用彼此相互隔离，在同一台机器上同时运行多个应用，不过他们彼此之间共享同一个操作系统。Docker 的优势在于，它可以在更细的粒度上进行资源的管理，也比虚拟化技术更加节约资源。Docker 是基于GO语言实现的开源容器项目，现在主流的Linux系统都支持Docker,Docker 的构想是想要实现“Build,Ship and Run Any App, Anywhere”,即通过对应用的封装（Packaging）、分发（Distribution）、部署（Deployment）、运行（Runtime）生命周期进行管理，达到应用组件“一次封装，到处运行”的目的。
+Docker 是一种容器技术，它可以将应用和环境等进行打包，形成一个独立的，类似于 iOS 的 APP 形式的「应用」，这个应用可以直接被分发到任意一个支持 Docker 的环境中，通过简单的命令即可启动运行。Docker 是一种最流行的容器化实现方案。和虚拟化技术类似，它极大的方便了应用服务的部署；又与虚拟化技术不同，它以一种更轻量的方式实现了应用服务的打包。使用 Docker 可以让每个应用彼此相互隔离，在同一台机器上同时运行多个应用，不过他们彼此之间共享同一个操作系统。Docker 的优势在于，它可以在更细的粒度上进行资源的管理，也比虚拟化技术更加节约资源。
+Docker 是基于GO语言实现的开源容器项目，现在主流的Linux系统都支持Docker,Docker 的构想是想要实现“Build,Ship and Run Any App, Anywhere”,即通过对应用的封装（Packaging）、分发（Distribution）、部署（Deployment）、运行（Runtime）生命周期进行管理，达到应用组件“一次封装，到处运行”的目的。
 
 ### 为什么使用docker
 1. Build Once, Run Everywhere : 一次创建与配置，之后可以在任意地方，任意时间让应用正常的运行 
