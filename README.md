@@ -1,4 +1,4 @@
-### 使用TreesDockerfile 部署 LNMPA + RRMVS+ 等等开发和生产环境。
+### 使用TreesDockerfile 部署 LNMPA + RRMVS+ 等等，WEB开发和生产环境。
 ### TreesDockerfile 会极大的方便，WEB项目的快速迭代开发和Git代码交付工作。
 
 
@@ -52,7 +52,7 @@ daocloud 的国内镜像最快：http://get.daocloud.io/#install-docker-for-mac-
 
 4、系统重启后环境丢失（偶然发生），这个可能是工具存在bug，我在下载各种镜像进行测试后，将我的Windows重启后发现default虚拟机里的东西都丢了，这个可能是由于环境在运行的状态下我重启了系统导致。目前我的解决办法是在每次关机或重启的时候，先将default虚拟机停掉，方法是在命令行下执行如下指令docker-machine stop default 。
 
-5. Docker镜像加速配置和虚拟机磁盘满负载后迁移
+5、Docker镜像加速配置和虚拟机磁盘满负载后迁移
 
 * Docker镜像加速配置
 
