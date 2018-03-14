@@ -1,5 +1,5 @@
-### 使用TreesDockerfile 部署 lnmp+redis+rabtitmq+mongodb+sphinx 等等测试和生产环境。
-### TreesDockerfile 会极大方便项目的快速迭代开发和Git代码交付工作。
+### 使用TreesDockerfile 部署 LNMPA + RRMVS+ 等等开发和生产环境。
+### TreesDockerfile 会极大的方便，WEB项目的快速迭代开发和Git代码交付工作。
 
 
 ### 什么是 Docker？
@@ -54,7 +54,7 @@ daocloud 的国内镜像最快：http://get.daocloud.io/#install-docker-for-mac-
 
 5. Docker镜像加速配置和虚拟机磁盘满负载后迁移
 
-*Docker镜像加速配置
+* Docker镜像加速配置
 
 目前有daocloud和阿里云的Docker镜像加速最快，daocloud比较专业，开发项目daocloud。
 [配置文档参考](http://guide.daocloud.io/dcs/daocloud-9153151.html#docker-toolbox)
@@ -66,7 +66,7 @@ sudo sed -i "s|EXTRA_ARGS='|EXTRA_ARGS='--registry-mirror=加速地址 |g" /var/
 exit
 docker-machine restart default 
 ```
-*虚拟机磁盘满负载后迁移
+* 虚拟机磁盘满负载后迁移
 
 Docker虚拟机文件地址修改
 1. 使用docker-machine stop default停掉Docker的虚拟机。
@@ -76,7 +76,7 @@ Docker虚拟机文件地址修改
 5. 把disk从“控制器SATA”中删除，然后重新添加我们刚才复制到另外一个磁盘上的那个文件。
 6. 确定，回到PowerShell，我们使用docker-machine start default就可以启动新地址的Docker虚拟机了。确保新磁盘的虚拟机没有问题。就可以把C盘那个disk文件删除了。
 
-[参考文档](https://www.cnblogs.com/studyzy/p/6113221.html)
+[虚拟机文件地址修改参考文档](https://www.cnblogs.com/studyzy/p/6113221.html)
 
 
 **linux 下安装** 
