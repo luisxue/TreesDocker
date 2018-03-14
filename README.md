@@ -52,6 +52,31 @@ daocloud 的国内镜像最快：http://get.daocloud.io/#install-docker-for-mac-
 
 4、系统重启后环境丢失（偶然发生），这个可能是工具存在bug，我在下载各种镜像进行测试后，将我的Windows重启后发现default虚拟机里的东西都丢了，这个可能是由于环境在运行的状态下我重启了系统导致。目前我的解决办法是在每次关机或重启的时候，先将default虚拟机停掉，方法是在命令行下执行如下指令docker-machine stop default 。
 
+5. Docker镜像加速配置和虚拟机磁盘满负载后迁移
+
+*Docker镜像加速配置
+
+目前有daocloud和阿里云的Docker镜像加速最快，daocloud比较专业，开发项目daocloud。
+[配置文档参考](http://guide.daocloud.io/dcs/daocloud-9153151.html#docker-toolbox)
+
+请确认你的 Docker Toolbox 已经启动，并执行下列命令（请将 加速地址 替换为在加速器页面获取的专属地址）
+```
+docker-machine ssh default
+sudo sed -i "s|EXTRA_ARGS='|EXTRA_ARGS='--registry-mirror=加速地址 |g" /var/lib/boot2docker/profile
+exit
+docker-machine restart default 
+```
+*虚拟机磁盘满负载后迁移
+
+Docker虚拟机文件地址修改
+1. 使用docker-machine stop default停掉Docker的虚拟机。
+2. 打开VirtualBox，选择“管理”菜单下的“虚拟介质管理”，我们可以看到Docker虚拟机用的虚拟硬盘的文件disk。
+3. 选中“disk”，然后点击菜单中的“复制”命令，根据向导，把当前的disk复制到另一个盘上面去。
+4. 回到VirtualBox主界面，右键“default”这个虚拟机，选择“设置”命令，在弹出的窗口中选择“存储”选项。
+5. 把disk从“控制器SATA”中删除，然后重新添加我们刚才复制到另外一个磁盘上的那个文件。
+6. 确定，回到PowerShell，我们使用docker-machine start default就可以启动新地址的Docker虚拟机了。确保新磁盘的虚拟机没有问题。就可以把C盘那个disk文件删除了。
+
+[参考文档](https://www.cnblogs.com/studyzy/p/6113221.html)
 
 
 **linux 下安装** 
